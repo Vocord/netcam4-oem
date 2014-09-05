@@ -1,0 +1,9 @@
+For running netview.tcl, udpt.tcl scripts you need:
+1. Installed Tcl/Tk interpreter
+2. Installed tcludp (http://sourceforge.net/projects/tcludp/)
+
+-----------------------------------------------------------------
+Для запуска скриптов netview.tcl, udpt.tcl необходимо установить:
+1. Tcl/Tk интерпретатор
+2. Библиотеку tcludp для поддержки протокола UDP в Tcl/Tk интерпретаторе:
+	http://sourceforge.net/projects/tcludp/

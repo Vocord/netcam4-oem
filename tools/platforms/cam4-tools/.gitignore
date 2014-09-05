@@ -1,0 +1,5 @@
+*.tcpdump
+*.raw
+*.ppm
+*.pgm
+*.pbm

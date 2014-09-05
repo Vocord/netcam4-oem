@@ -1,0 +1,8 @@
+cam4_ps
+cam4_raw_client
+cam4_raw_dumper
+cam4_ps_Xclient
+*.log
+*.ppm
+*.raw
+*.vraw

@@ -1,0 +1,10 @@
+*.fpn
+*.ppm
+*.raw
+*.hst
+*.tmp
+*.flash
+*.log
+cam4_ps
+cam4_ps_Xclient
+flash
