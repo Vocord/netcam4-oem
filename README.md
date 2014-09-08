@@ -1,6 +1,6 @@
 #DEPENDENCIES
 * Linux kernel should be configured with "Packet Socket" support.
-* TCL/TIX утилиты требуют наличие udptcl библиотеки.
+* TCL/TIX utilities requires udptcl library (http://sourceforge.net/projects/tcludp/).
 * Application for RAW video visualization requires xvideo extention to work and X11 devel headers to build. 
 
 #PROJECT TREE
