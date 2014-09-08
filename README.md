@@ -1,10 +1,9 @@
+#DEPENDENCY:
+* Linux kernel should be configured with PACKET_SOCKET support.
+* TCL/TIX утилиты требуют наличие udptcl библиотеки.
+* Application for RAW video visualization requires xvideo extention to work and X11 devel headers to build. 
 
-DEPENDENCY:
-	1. Linux kernel should be configured with PACKET_SOCKET support.
-	2. TCL/TIX утилиты требуют наличие udptcl библиотеки
-	3. Application for RAW video visualization requires xvideo extention
-	   to work and X11 devel headers to build. 
-
+#PROJECT TREE
 tools/platforms/cam4-client:
 	.i686/cam4-jpeg-data-cl
 		Example of client to capture FACES and MJPEG data via network
@@ -25,5 +24,5 @@ tools/platforms/cam4-client:
 
 tools/platforms/cam4-tools:
 	.i686/cam4-tcpdump
-		Utility to simple analize and dump RAW VIDEO wireshark/tcpdump capture
+		Utility to simple analize and dump RAW VIDEO from wireshark/tcpdump capture
 		files in .tcpdump format
