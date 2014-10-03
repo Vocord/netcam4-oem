@@ -1169,8 +1169,15 @@ int auth_release(p3_auth_info_t *ainfo)
 {
 	abi_release_task(&ainfo->task_i);
 
-	if(ainfo->abi)
+	if(ainfo->abi_rx) {
+		abi_close(ainfo->abi_rx);
+		ainfo->abi_rx = NULL;
+	}
+
+	if(ainfo->abi) {
 		abi_close(ainfo->abi);
+		ainfo->abi = NULL;
+	}
 
 	return 0;
 }
