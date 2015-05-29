@@ -107,6 +107,16 @@ static inline int check_serial16(volatile serial16_t *serial)
 	return 1;
 }
 
+static inline int check_serial16_(volatile serial16_t *serial) __attribute__((unused));
+static inline int check_serial16_(volatile serial16_t *serial)
+{
+	uint_fast16_t vnew = serial->vnew; 	/* atomize new value */
+	if(likely(serial->vcur == vnew))
+		return 0;
+
+	return 1;
+}
+
 static inline int check_serial32(volatile serial32_t *serial) __attribute__((unused));
 static inline int check_serial32(volatile serial32_t *serial)
 {
