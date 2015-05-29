@@ -137,6 +137,7 @@ typedef struct cam4_rd_s {
 	uint32_t 		    	expo;
 
 	debayer_api_t			d_api;
+	uint32_t			lid;
 } cam4_rd_t;
 
 typedef int (*cam4_ps_cb_f)(cam4_rd_t *hdr);

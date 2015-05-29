@@ -72,6 +72,8 @@ typedef struct common_s {
 	uint32_t	reg1;
 	uint32_t	reg2;
 
+	uint32_t	ff;		/* flow filter */
+	uint32_t	lid;
 } common_t;
 
 #define	key_yuv1	(6182)
