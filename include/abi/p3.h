@@ -267,6 +267,20 @@ ABI_STRING_CONST(P3_ABI_SENSOR_G_IDX_T,		"gains-idx");	/* Sensor Gains types */
 ABI_STRING_CONST(P3_ABI_SENSOR_LUT_T,		"sensor-lut");	/* Sensor LUT */
 ABI_STRING_CONST(P3_ABI_SENSOR_ROI_T,		"sensor-roi");	/* Sensor ROI */
 
+/* Network parameters and controls */
+ABI_STRING_CONST(P3_ABI_NET_N,			"/net");	/* Net Node */
+
+/* Optic parameters and controls */
+ABI_STRING_CONST(P3_ABI_OPTICS_N,		"/optics");	/* Sensor Node */
+ABI_STRING_CONST(P3_ABI_CNTL_ZOOM_T,		"cntl-zoom");	/* ZOOM   Motor lb_task_cfg_dim_t */
+ABI_STRING_CONST(P3_ABI_CNTL_FOCUS_T,		"cntl-focus");	/* FOCUS  Motor lb_task_cfg_dim_t */
+ABI_STRING_CONST(P3_ABI_CNTL_IRIS_T,		"cntl-iris");	/* ZOOM   Motor lb_task_cfg_dim_t */
+ABI_STRING_CONST(P3_ABI_CNTL_FILTER_T,		"cntl-filter");	/* FILTER Motor lb_task_cfg_dim_t */
+
+ABI_STRING_CONST(P3_ABI_SENSOR_PARAMS_T,	"sensor-params");	/* Sensor Params */
+ABI_STRING_CONST(P3_ABI_LENS_PARAMS_T,		"lens-params");		/* Lens Params */
+
+ABI_STRING_CONST(P3_ABI_SENSOR_N,		"/sensor");	/* Sensor Node */
 /* Cam Ctrl data */
 ABI_STRING_CONST(P3_ABI_CAMCTRL_STATE_T,	"camctrl-state");	/* CAMCTRL State */
 ABI_STRING_CONST(P3_ABI_CAMCTRL_LHIST_T,	"camctrl-lhist");	/* CAMCTRL Luma Hist */
@@ -306,6 +320,7 @@ ABI_STRING_CONST(P3_ABI_TIME_NEW_T0_T,		"tNT0");
 ABI_STRING_CONST(P3_ABI_TIME_NEW_T1_T,		"tNT1");
 ABI_STRING_CONST(P3_ABI_TIME_PREV_T,		"TPRV");
 ABI_STRING_CONST(P3_ABI_TIME_PERIOD_T,		"period");
+ABI_STRING_CONST(P3_ABI_FOUT_PERIOD_T,		"period-fout");	/* flow output period	 */
 ABI_STRING_CONST(P3_ABI_SEQ64_T,		"seq64");	/* 64bit Sequence number */
 
 ABI_STRING_CONST(P3_ABI_NODE_N,			"/");
@@ -926,6 +941,18 @@ typedef union {
 					\
 	VAR = cnv.nv;			\
 }
+
+#define VOLATILE_CAST_DECL(TYPE, VAR, VARV)	\
+{					\
+	TYPE			VAR;	\
+	union {				\
+		TYPE		nv;	\
+		volatile TYPE	v;	\
+	} cnv = { .v = VARV };		\
+					\
+	VAR = cnv.nv;			\
+}
+
 
 #if defined(_MSC_VER) && !defined(__GNUC__)
 #include <compilers/visualc/alignx.h>
