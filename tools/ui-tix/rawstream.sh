@@ -25,7 +25,7 @@
 #  59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.		   #
 #									   #
 ############################################################################
-
+ARCH=`arch`
 killall cam4_ps
 killall cam4_ps_Xclient
 ipcrm  -M 0x00001831
@@ -36,7 +36,7 @@ ip route get $2 >route.log
 grep src route.log | while read a1 a2 a3 a4 SRC
 do
 	echo ./cam4_ps -M -m 2 -d $SRC -v $2
-	./cam4_ps -M -m 2 -d $SRC -v $2 > $2.ccl.log &
+	../platforms/cam4-client/.$ARCH/cam4_ps -M -m 2 -d $SRC -v $2 > $2.ccl.log &
 done
 
-./cam4_ps_Xclient -g > $2.xcl.log &
+../platforms/cam4-client/.$ARCH/cam4_ps_Xclient -g > $2.xcl.log &
